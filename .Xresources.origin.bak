@@ -1,0 +1,107 @@
+#### Reload it: xrdb ~/.Xresources or xrdb -load ~/.Xresources
+
+#### Setting copy / paste for VIM in urxvt via urxvt-perls
+!! cd /usr/lib/urxvt/perl; git clone https://github.com/muennich/urxvt-perls .
+!! Perl extensions
+!! .Xresources for urxvt, clipboard CTRL+SHIFT+(C|V|X), CTRL+Arrow for word cursor movement
+URxvt.perl-ext-common: default,clipboard,matcher,keyboard-select
+
+!! URLs
+URxvt.keysym.C-U: perl:url-select:select_next
+URxvt.url-launcher: /usr/bin/firefox -new-tab
+URxvt.underlineURLs: True
+URxvt.matcher.button: 1
+
+!! Copy-Paste
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.copyCommand: xsel -ib
+URxvt.pasteCommand: xsel -ob
+
+!-- Xft settings -- !
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+! Xft ----------------
+! Xft.autohint:  0
+! Xft.lcdfilter: lcddefault
+! Xft.hintstyle: hintfull
+! Xft.hinting:   1
+! Xft.antialias: 1
+! Xft.dpi:       96
+! Xft.rgba:      rgb
+
+! rxvt-unicode -------
+! URxvt.perl-ext-common: default,matcher
+! URxvt.font: xft:Droid Sans Mono:pixelsize=11:Regular
+! URxvt.boldFont: xft:Droid Sans Mono:pixelsize=11:Bold
+! URxvt.italicFont: xft:Droid Sans Mono:pixelsize=11:Italic
+! URxvt.boldItalicFont: xft:Droid Sans Mono:pixelsize=11:Bold:Italic
+! URxvt.letterSpace: -1
+
+##### THIS FILE IS BEING CURRENTLY MANAGED BY URXVTCONFIG #####
+##### CHANGES DONE TO THIS FILE MANUALLY MAY AFFECT THE FUNCTIONALITY ######
+##### PROCEED WITH CAUTION! #####
+
+
+! Setting the keyym ----------
+! URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+! URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! special colors
+*.foreground:  #93a1a1
+*.background:  #002b36
+*.cursorColor:  #93a1a1
+! black
+*.color0:      #002b36
+*.color8:      #657b83
+! red
+*.color1:      #dc322f
+*.color9:      #dc322f
+! green
+*.color2:      #859900
+*.color10:     #859900
+! yellow
+*.color3:      #b58900
+*.color11:     #b58900
+! blue
+*.color4:      #268bd2
+*.color12:     #268bd2
+! magenta
+*.color5:      #6c71c4
+*.color13:     #6c71c4
+! cyan
+*.color6:      #2aa198
+*.color14:     #2aa198
+! white
+*.color7:      #93a1a1
+*.color15:     #fdf6e3
+
+URxvt*scrollBar:         false
+! URxvt.scrollstyle: rxvt
+! URxvt*scrollBar_right:   true
+
+URxvt*transparent:       true
+URxvt*shading:       27
+
+URxvt.font: xft:Consolas:pixelsize=12
+URxvt.letterSpace: 0
+
+*antialias:  true
+*autohint:   true
+
+! URxvt.perl-ext-common: default,matcher
+! URxvt.url-launcher: Browser?
+! URxvt.matcher.button: 1
+! 
+! URxvt.perl-ext-common: ...,tabbed,...
+! URxvt.tabbed.tabbar-fg: 2
+! URxvt.tabbed.tabbar-bg: 0
+! URxvt.tabbed.tab-fg: 3
+! URxvt.tabbed.tab-bg: 2
